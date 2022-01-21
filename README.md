@@ -1,2 +1,2 @@
 # coursework-nand2tetris
-My projects and notes
+My projects, notes and other materials for the Nand to Tetris course.
