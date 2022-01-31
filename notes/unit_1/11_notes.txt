@@ -1,0 +1,10 @@
+Note in diagram that the signal between the Mux and DMux chips contains alternating bits from the two input streams to the Mux chip.
+
+Every bit of each input stream is included.  Nothing is left out.
+
+But how is this possible?
+
+When sel == 0, the output from Mux only gives the input bit from stream a.
+When sel == 1, the output from Mux only gives the input bit from stream b.
+
+Given that no bits from streams a or b are left out of the signal between Mux and Dmux, it must be the case that the information rate (bit per unit time) of the sel stream is double the information rate of the a stream and the b stream.
