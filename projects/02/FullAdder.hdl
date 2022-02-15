@@ -13,5 +13,20 @@ CHIP FullAdder {
         carry;   // Left bit of a + b + c
 
     PARTS:
-    // Put you code here:
+    // Chips required for sum
+    Xor (a=b, b=c, out=bXorc);
+    Xor (a=a, b=bXorc, out=sum);
+    
+    // Chips required for carry
+    And (a=b, b=c, out=bAndc);
+    Or (a=a, b=bAndc, out=aOrbAndc);
+    
+    And (a=aOrbAndc, b=expr, out=carry);
+    
+    Not (in=b, out=Notb);
+    Not (in=c, out=Notc);
+    And (a=Notb, b=Notc, out=NotbAndNotc);
+    And (a=a, b=NotbAndNotc, out=aAndNotbAndNotc);
+    Not (in=aAndNotbAndNotc, out=expr);
+    
 }
